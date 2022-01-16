@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View, Modal, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import commonStyles from '../../style/commonStyles';
 import MoviesList from '../MoviesList';
-import AddMovieModal from '../AddMovieModal';
+import AddMovieModal from '../Modals/AddMovieModal';
 import colors from '../../style/colors';
+import GenericModal from '../GenericModal';
 
 const MyMovies = () => {
   const [myMovies, setMyMovies] = useState([]);
@@ -28,9 +29,11 @@ const MyMovies = () => {
         </TouchableOpacity>
       </View>
       <MoviesList moviesList={myMovies} />
-      <AddMovieModal
-        {...{myMovies, setMyMovies, modalVisible, addMovieModalControl}}
-      />
+      <GenericModal
+        visible={modalVisible}
+        onRequestClose={addMovieModalControl.dismiss}>
+        <AddMovieModal {...{myMovies, setMyMovies, addMovieModalControl}} />
+      </GenericModal>
     </View>
   );
 };

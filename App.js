@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {SafeAreaView, FlatList, StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import {SafeAreaView, StyleSheet} from 'react-native';
 import AllMovies from './src/components/movieLists/AllMovies';
 import MyMovies from './src/components/movieLists/MyMovies';
 import colors from './src/style/colors';

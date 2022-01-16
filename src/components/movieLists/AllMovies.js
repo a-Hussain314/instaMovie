@@ -10,13 +10,14 @@ const AllMovies = () => {
   const pageNumber = useRef(1);
 
   const loadMovies = useCallback(() => {
-    setIsloading(true);
+    setIsloading(true); // show the loading spinner
+    // fetch the first/next page movies 
     getMovies({
       pageNumber: pageNumber.current,
       onSuccess: data => {
-        pageNumber.current++;
-        setIsloading(false);
-        setAllMovies([...allMovies, ...data]);
+        pageNumber.current++; // update page number value to fetch next page in next function call
+        setIsloading(false); // hide the loading spinner
+        setAllMovies([...allMovies, ...data]); // update "allmovies" list/state to add the newely fetched movies
       },
     });
   }, [setIsloading, allMovies, setAllMovies, pageNumber.current]);

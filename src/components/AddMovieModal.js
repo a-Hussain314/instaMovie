@@ -17,7 +17,7 @@ const AddMovieModal = ({
   myMovies,
   setMyMovies,
   modalVisible,
-  AddMovieModalControl,
+  addMovieModalControl,
 }) => {
   const [image, setImage] = useState(require('../assets/selectImage.webp'));
   const [title, setTitle] = useState('');
@@ -52,7 +52,7 @@ const AddMovieModal = ({
         overview,
       };
       setMyMovies([newMovie, ...myMovies]);
-      AddMovieModalControl.dismiss();
+      addMovieModalControl.dismiss();
       // after add new movie, clear form data.
       setImage(require('../assets/selectImage.webp'));
       setTitle('');
@@ -68,7 +68,7 @@ const AddMovieModal = ({
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
-        onPress={AddMovieModalControl.dismiss}>
+        onPress={addMovieModalControl.dismiss}>
         <Text style={styles.cancelButtonText}>Cancel</Text>
       </TouchableOpacity>
     </View>
@@ -79,7 +79,7 @@ const AddMovieModal = ({
       animationType="fade"
       transparent={true}
       visible={modalVisible}
-      onRequestClose={AddMovieModalControl.dismiss}>
+      onRequestClose={addMovieModalControl.dismiss}>
       <View style={styles.modal}>
         <View style={styles.modalForm}>
           <ImageInput {...{image, setImage}} />

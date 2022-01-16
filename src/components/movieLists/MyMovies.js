@@ -9,7 +9,7 @@ const MyMovies = () => {
   const [myMovies, setMyMovies] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
 
-  const AddMovieModalControl = {
+  const addMovieModalControl = {
     open: () => setModalVisible(true),
     dismiss: () => setModalVisible(false),
   };
@@ -23,13 +23,13 @@ const MyMovies = () => {
           styles.titleBox,
         ]}>
         <Text style={commonStyles.title}>My Movies</Text>
-        <TouchableOpacity onPress={AddMovieModalControl.open}>
+        <TouchableOpacity onPress={addMovieModalControl.open}>
           <Text style={styles.addButton}>Add Movie</Text>
         </TouchableOpacity>
       </View>
       <MoviesList moviesList={myMovies} />
       <AddMovieModal
-        {...{myMovies, setMyMovies, modalVisible, AddMovieModalControl}}
+        {...{myMovies, setMyMovies, modalVisible, addMovieModalControl}}
       />
     </View>
   );
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   addButton: {
-    color: '#fff',
+    color: colors.light,
     backgroundColor: colors.green,
     paddingVertical: 5,
     paddingHorizontal: 10,

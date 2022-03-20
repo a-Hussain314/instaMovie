@@ -93,6 +93,9 @@ const styles = StyleSheet.create({
   date: {
     fontSize: 12,
     fontWeight: 'bold',
+    color: colors.darkgrey,
   },
-  overview: {},
+  overview: {
+    color: colors.darkgrey
+  },
 });

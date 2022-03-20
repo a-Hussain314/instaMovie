@@ -18,6 +18,7 @@ const commonStyles = StyleSheet.create({
     borderColor: colors.darkgrey,
     padding: 5,
     borderRadius: 5,
+    color: colors.dark
   },
   titleBox: {
     padding: 10,

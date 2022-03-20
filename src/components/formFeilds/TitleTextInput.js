@@ -1,6 +1,7 @@
 import React, {memo} from 'react';
 import {TextInput} from 'react-native';
 import commonStyles from '../../style/commonStyles';
+import colors from "../../style/colors"
 
 const TitleTextInput = ({title, setTitle}) => {
   return (
@@ -9,6 +10,7 @@ const TitleTextInput = ({title, setTitle}) => {
       onChangeText={setTitle}
       value={title}
       placeholder="Movie Title"
+      placeholderTextColor={colors.darkgrey}
     />
   );
 };
